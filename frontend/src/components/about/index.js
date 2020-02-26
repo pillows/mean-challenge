@@ -1,17 +1,11 @@
 import angular from 'angular';
 import template from './template.html';
 import './about.less';
-
+// import { athleteController } from '../controller/athleteController'
 class AboutController {
     constructor() {
         this.name = 'About';
         this.color = 'red';
-
-        // 动态加载
-        // require.ensure(['./module-a'], function(require) {
-        //     var a = require('./module-a');
-        //     a();
-        // });
     }
 }
 
@@ -20,5 +14,18 @@ export default angular.module('xxx.about', [])
         template    : template,
         controller  : AboutController,
         controllerAs: 'about'
+    })
+    .controller('AthleteController', function (properties){
+        
+
+        this.properties = properties.list;
+
+        this.newProperty = 'Hello World!';
+
+        this.addProperty  = function(message){
+            properties.add(message);
+            this.newProperty = '';
+            console.log(properties);
+        };
     })
     .name;

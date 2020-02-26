@@ -1,1 +1,9 @@
 <h1 class="{{$ctrl.style.title}}">This from <span style="color:{{ $ctrl.color }}">{{ $ctrl.name }}</span> Component</h1>
+<div ng-controller="AthleteController as athlete">
+        <a ng-href='#!/login/' target="_self">login</a>
+    <p ng-repeat="property in athlete.properties">{{ property.id }}: {{ property.text }}</p>
+  <form ng-submit="athlete.addProperty(athlete.newProperty)">
+    <input type="text" ng-model="athlete.newProperty">
+    <button type="submit">Add Message</button>
+  </form>
+</div>

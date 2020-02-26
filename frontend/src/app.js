@@ -5,6 +5,7 @@ import appRouter from './app.router';
 import './css/main.less';
 import style from './app.less';
 //import './app.css';
+
 let appComponent = {
     restrict    : 'E',
     template    : require('./app.html'),
