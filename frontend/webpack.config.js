@@ -194,7 +194,8 @@ module.exports = function () {
             // Minimize output infomation
             //stats      : 'minimal',
             // Server port
-            port       : 7070
+            port       : 8080,
+	    disableHostCheck: true
         }
     };
 
