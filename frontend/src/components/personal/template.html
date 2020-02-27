@@ -8,7 +8,6 @@
             Step {{ personal.value }} of 5
         </div>
     </div>
-    test: {{ $route.current.activetab}}
     <div class="navbar">
         <div class="navbar-inner">
             <ul class="nav nav-tabs">
@@ -41,6 +40,7 @@
     </div>
 </div>
 <div ng-controller="AthleteController as athlete">
+    For testing inter property persistance of data
     <p ng-repeat="property in athlete.properties">{{ property.id }}: {{ property.text }}</p>
   <form ng-submit="athlete.addProperty(athlete.newProperty)">
     <input type="text" ng-model="athlete.newProperty">

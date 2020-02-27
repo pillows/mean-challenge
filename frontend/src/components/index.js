@@ -21,8 +21,11 @@ export default angular.module('components', [
 .factory('properties', function(){
     let properties = {};
 
+    // Random debugging defaults
     properties.list = [{id:1, text: 'hello'}];
     properties.name = 'matt'
+
+    // Used as setters when submitting form data
     properties.add = function(message){
         properties.list.push({id: properties.list.length, text: message});
     };
