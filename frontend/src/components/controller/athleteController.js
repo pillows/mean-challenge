@@ -1,11 +1,14 @@
-export function athleteController(){
-    var messages = {};
+export function AthleteController($scope, properties){
+        
+    this.properties = properties.list;
 
-    messages.list = [{id:1, text: 'hello'}];
-
-    messages.add = function(message){
-        messages.list.push({id: messages.list.length, text: message});
+    this.addProperty  = function(message){
+        properties.add(message);
+        this.newProperty = '';
+        console.log(properties);
     };
 
-    return messages;
+    this.addName = function(message){
+        properties.addName(message)
+    };
 }

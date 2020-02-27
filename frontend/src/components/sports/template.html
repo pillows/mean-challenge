@@ -1,0 +1,50 @@
+
+
+<h1 class="title">This from <span style="color:{{ sports.color }}">{{ sports.name }}</span> Component</h1>
+<div class="row">
+<div class="col-md-6 col-md-offset-3">
+    <div class="progress">
+        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{ sports.value }}" aria-valuemin="1" aria-valuemax="5" style="width: {{sports.value * 20}}%;">
+            Step {{ sports.value }} of 5
+        </div>
+    </div>
+    test: {{ $route.current.activetab}}
+    <div class="navbar">
+        <div class="navbar-inner">
+            <ul class="nav nav-tabs">
+                <li ng-class="{active: $route.current.activetab == 'personal'}"><a href="/personal" data-toggle="tab" data-step="1">Personal</a></li>
+                <li ng-class="{active: $route.current.activetab == 'sports'}"><a href="/sports" data-toggle="tab" data-step="2">Sports</a></li>
+                <li ng-class="{active: $route.current.activetab == 'social'}"><a href="/social" data-toggle="tab" data-step="3">Social</a></li>
+                <li ng-class="{active: $route.current.activetab == 'family'}"><a href="/family" data-toggle="tab" data-step="4">Family</a></li>
+                <li ng-class="{active: $route.current.activetab == 'preview'}"><a href="/preview" data-toggle="tab" data-step="5">Preview</a></li>
+            </ul>
+        </div>
+    </div>
+   <div ng-controller="AthleteController as athlete" class="tab-content form-horizontal">
+        <div class="well">
+        
+          <div class="form-group">
+            <label for="fullname" class="col-sm-2 control-label">Name</label>
+            <div class="col-sm-10">
+              <input type="text" value={{athlete.properties.name}} ng-model="athlete.properties.name" class="form-control" name="fullname">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="dateofbirth" class="col-sm-2 control-label">Date of Birth</label>
+            <div class="col-sm-10">
+              <input type="date" value='2006-01-01' class="form-control" id="dateofbirth">
+            </div>
+          </div>
+          <a class="btn btn-default btn-lg next" href="">Previous</a>
+            <a class="btn btn-primary btn-lg next" href="" ng-click=athlete.addName(athlete.name)>Continue</a>
+        </div>
+    </div>
+</div>
+<div ng-controller="AthleteController as athlete">
+
+    <p ng-repeat="property in athlete.properties">{{ property.id }}: {{ property.text }}</p>
+  <form ng-submit="athlete.addProperty(athlete.newProperty)">
+    <input type="text" ng-model="athlete.newProperty">
+    <button type="submit">Add Message</button>
+  </form>
+</div>
