@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/why520crazy/angular1.x-webpack-seed#readme",
   "dependencies": {
-    "angular": "^1.5.7",
+    "angular": "^1.8.0",
     "angular-route": "^1.5.7",
     "angular-wizard": "^1.1.1",
     "bootstrap": "^3.3.6",
